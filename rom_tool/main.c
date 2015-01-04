@@ -62,6 +62,11 @@ int main(int argc, char *argv[])
 			memcpy(ctx->outfile.argument,argv[i]+10,ctx->outfile.arg_len+1);
 		}
 		else if(i == argc-1){
+			FILE *cci = fopen(argv[i],"rb");
+			if(cci == NULL){
+				printf("[!] Failed to open '%s', last argument must be a CCI file.\n",argv[i]);
+				return Fail;
+			}
 			ctx->cci_file.arg_len = strlen(argv[i]);
 			ctx->cci_file.argument = malloc(ctx->cci_file.arg_len+1);
 			if(ctx->cci_file.argument == NULL){
@@ -69,11 +74,6 @@ int main(int argc, char *argv[])
 				return Fail;
 			}
 			memcpy(ctx->cci_file.argument,argv[i],ctx->cci_file.arg_len+1);
-			FILE *cci = fopen(ctx->cci_file.argument,"rb");
-			if(cci == NULL){
-				printf("[!] Failed to open '%s'\n",ctx->cci_file.argument);
-				return Fail;
-			}
 			fclose(cci);
 		}
 	}
