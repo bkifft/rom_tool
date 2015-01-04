@@ -1,3 +1,6 @@
+#ifndef _LIB_H
+#define _LIB_H
+
 #define _FILE_OFFSET_BITS 64
 #define _LARGEFILE_SOURCE
 #define _LARGEFILE64_SOURCE
@@ -27,4 +30,4 @@
 #include "utils.h"
 #include "ctx.h"
 
-
+#endif

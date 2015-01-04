@@ -1,3 +1,6 @@
+#ifndef _CTX_H
+#define _CTX_H
+
 typedef enum
 {
 	NCCH_MAGIC = 0x4E434348,
@@ -99,3 +102,5 @@ typedef struct
 	u8 flags[6];
 } __attribute__((__packed__)) 
 CCI_CONTEXT;
+
+#endif

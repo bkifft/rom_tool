@@ -13,7 +13,6 @@ typedef struct
 	u64 size;
 } __attribute__((__packed__)) 
 COMPONENT_STRUCT;
-#endif
 
 //MISC
 void char_to_int_array(unsigned char destination[], char source[], int size, int endianness, int base);
@@ -45,3 +44,4 @@ int u64_to_u8(u8 *out_value, u64 in_value, u8 endianness);
 //from ctrtool
 void memdump(FILE* fout, const char* prefix, const u8* data, u32 size);
 
+#endif

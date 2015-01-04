@@ -1,5 +1,4 @@
 #include "lib.h"
-#include "main.h"
 #include "ncsd.h"
 
 typedef enum
@@ -10,6 +9,8 @@ typedef enum
 
 void app_title(void);
 void help(char *app_name);
+void free_buffers(CCI_CONTEXT *ctx);
+
 
 int main(int argc, char *argv[])
 {	
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 		if(strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0){
 			help(argv[0]);
 			free_buffers(ctx);
-			return ARGC_FAIL;
+			return 0;
 		}
 		else if(strcmp(argv[i], "-i") == 0 || strcmp(argv[i], "--info") == 0)
 			ctx->flags[info] = True;

@@ -1,3 +1,6 @@
+#ifndef _NCSD_H
+#define _NCSD_H
+
 typedef enum
 {
 	secure_key,
@@ -202,3 +205,5 @@ void GetCCIFileStatus(u64 CCI_FILE_SIZE, u8 CCI_FILE_STATUS, int type);
 void GetCUPVersion(/*char *FW_STRING, */CARD_INFO_HEADER *card_info);
 //int GetPlainRegionStrings(FILE *cxi, u64 plain_region_offset, u64 plain_region_size, char *MiddleWareString[100]);
 int GetSDKVersion(FILE *cxi, u64 plain_region_offset, u64 plain_region_size, NCSD_STRUCT *ctx);
+
+#endif

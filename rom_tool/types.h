@@ -1,3 +1,6 @@
+#ifndef _TYPES_H
+#define _TYPES_H
+
 #include <stdlib.h>
 #include <stdint.h>
 //Bools
@@ -43,3 +46,5 @@ typedef signed char     s8;
 typedef signed short    s16;
 typedef signed int      s32;
 typedef signed long long        s64;
+
+#endif
