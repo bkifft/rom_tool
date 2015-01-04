@@ -14,7 +14,7 @@ void help(char *app_name);
 int main(int argc, char *argv[])
 {	
 	//Filter Out Bad number of arguments
-	if (argc < 2){
+	if (argc < 3){
 		printf("[!] Must Specify Arguments\n");
 		help(argv[0]);
 		return ARGC_FAIL;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 			ctx->outfile.arg_len = strlen(argv[i+1]);
 			ctx->outfile.argument = malloc(ctx->outfile.arg_len);
 			if(ctx->outfile.argument == NULL){
-				printf("[!] MEM ERROR\n");
+				puts("[!] MEM ERROR\n");
 				return Fail;
 			}
 			memcpy(ctx->outfile.argument,argv[i+1],ctx->outfile.arg_len+1);
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 			ctx->outfile.arg_len = strlen(argv[i]+10);
 			ctx->outfile.argument = malloc(ctx->outfile.arg_len);
 			if(ctx->outfile.argument == NULL){
-				printf("[!] MEM ERROR\n");
+				puts("[!] MEM ERROR\n");
 				return Fail;
 			}
 			memcpy(ctx->outfile.argument,argv[i]+10,ctx->outfile.arg_len+1);
@@ -65,14 +65,14 @@ int main(int argc, char *argv[])
 			ctx->cci_file.arg_len = strlen(argv[i]);
 			ctx->cci_file.argument = malloc(ctx->cci_file.arg_len+1);
 			if(ctx->cci_file.argument == NULL){
-				printf("[!] MEM ERROR\n");
+				puts("[!] MEM ERROR\n");
 				return Fail;
 			}
 			memcpy(ctx->cci_file.argument,argv[i],ctx->cci_file.arg_len+1);
 			FILE *cci = fopen(ctx->cci_file.argument,"rb");
 			if(cci == NULL){
 				printf("[!] Failed to open '%s'\n",ctx->cci_file.argument);
-				return 1;
+				return Fail;
 			}
 			fclose(cci);
 		}

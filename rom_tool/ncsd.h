@@ -193,6 +193,7 @@ int TrimCCI(CCI_CONTEXT *ctx);
 int RestoreCCI(CCI_CONTEXT *ctx);
 int ExtractCCIPartitions(CCI_CONTEXT *ctx);
 void WriteDummyBytes(FILE *file, u8 dummy_byte, u64 len);
+void PrintCCIPartitionData(NCSD_STRUCT *ctx, NCSD_HEADER *header, CARD_INFO_HEADER *card_info, DEV_CARD_INFO_HEADER *dev_card_info);
 void PrintNCSDHeaderData(NCSD_STRUCT *ctx, NCSD_HEADER *header, CARD_INFO_HEADER *card_info, DEV_CARD_INFO_HEADER *dev_card_info);
 void PrintNCSDPartitionData(NCSD_STRUCT *ctx, NCSD_HEADER *header, CARD_INFO_HEADER *card_info, DEV_CARD_INFO_HEADER *dev_card_info);
 void GetCHIPFullSize(u64 MEDIA_SIZE, int type);
